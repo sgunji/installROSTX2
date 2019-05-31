@@ -3,6 +3,7 @@
 # Maintainer of ARM builds for ROS is http://answers.ros.org/users/1034/ahendrix/
 # Information from:
 # http://wiki.ros.org/kinetic/Installation/UbuntuARM
+# for Jetpack .2
 
 # Red is 1
 # Green is 2
@@ -11,14 +12,14 @@
 function usage
 {
     echo "Usage: ./installROS.sh [[-p package] | [-h]]"
-    echo "Install ROS Kinetic"
-    echo "Installs ros-kinetic-ros-base as default base package; Use -p to override"
+    echo "Install ROS Melodic"
+    echo "Installs ros-melodic-ros-base as default base package; Use -p to override"
     echo "-p | --package <packagename>  ROS package to install"
     echo "                              Multiple usage allowed"
     echo "                              Must include one of the following:"
-    echo "                               ros-kinetic-ros-base"
-    echo "                               ros-kinetic-desktop"
-    echo "                               ros-kinetic-desktop-full"
+    echo "                               ros-melodic-ros-base"
+    echo "                               ros-melodic-desktop"
+    echo "                               ros-melodic-desktop-full"
     echo "-h | --help  This message"
 }
 
@@ -28,9 +29,9 @@ function shouldInstallPackages
     echo "Your package list did not include a recommended base package"
     tput sgr0 
     echo "Please include one of the following:"
-    echo "   ros-kinetic-ros-base"
-    echo "   ros-kinetic-desktop"
-    echo "   ros-kinetic-desktop-full"
+    echo "   ros-melodic-ros-base"
+    echo "   ros-melodic-desktop"
+    echo "   ros-melodic-desktop-full"
     echo ""
     echo "ROS not installed"
 }
@@ -129,7 +130,7 @@ sudo rosdep init
 # To find available packages, use:
 rosdep update
 # Environment Setup - Don't add /opt/ros/kinetic/setup.bash if it's already in bashrc
-grep -q -F 'source /opt/ros/kinetic/setup.bash' ~/.bashrc || echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+grep -q -F 'source /opt/ros/melodic/setup.bash' ~/.bashrc || echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 # Install rosinstall
 tput setaf 2
